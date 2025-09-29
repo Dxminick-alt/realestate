@@ -1,0 +1,49 @@
+=== Real Estate Management System Test ===
+
+1. Creating RealEstate objects:
+--------------------------------
+1. RealEstate{city='Budapest', price=250000.00, sqm=100, numberOfRooms=4.0, genre=CONDOMINIUM, totalPrice=32500000, avgSqmPerRoom=25.00}
+2. RealEstate{city='Debrecen', price=220000.00, sqm=120, numberOfRooms=5.0, genre=FAMILYHOUSE, totalPrice=31680000, avgSqmPerRoom=24.00}
+3. RealEstate{city='Nyíregyháza', price=110000.00, sqm=60, numberOfRooms=2.0, genre=FARM, totalPrice=7589999, avgSqmPerRoom=30.00}
+4. RealEstate{city='Nyíregyháza', price=250000.00, sqm=160, numberOfRooms=6.0, genre=FAMILYHOUSE, totalPrice=46000000, avgSqmPerRoom=26.67}
+5. RealEstate{city='Kisvárda', price=150000.00, sqm=50, numberOfRooms=2.0, genre=CONDOMINIUM, totalPrice=7500000, avgSqmPerRoom=25.00}
+6. RealEstate{city='Nyíregyháza', price=150000.00, sqm=68, numberOfRooms=4.0, genre=CONDOMINIUM, totalPrice=11730000, avgSqmPerRoom=17.00}
+
+2. Creating Panel objects:
+-------------------------
+1. Panel{city='Budapest', price=180000.00, sqm=70, numberOfRooms=3.0, genre=CONDOMINIUM, floor=4, isInsulated=false, totalPrice=16380000, avgSqmPerRoom=23.33}
+2. Panel{city='Debrecen', price=120000.00, sqm=35, numberOfRooms=2.0, genre=CONDOMINIUM, floor=0, isInsulated=true, totalPrice=5544000, avgSqmPerRoom=17.50}
+3. Panel{city='Tiszaújváros', price=120000.00, sqm=750, numberOfRooms=3.0, genre=CONDOMINIUM, floor=10, isInsulated=false, totalPrice=85500000, avgSqmPerRoom=250.00}
+4. Panel{city='Nyíregyháza', price=170000.00, sqm=80, numberOfRooms=3.0, genre=CONDOMINIUM, floor=7, isInsulated=false, totalPrice=15639999, avgSqmPerRoom=26.67}
+
+3. Testing discount functionality:
+---------------------------------
+Original property: RealEstate{city='Budapest', price=200000.00, sqm=80, numberOfRooms=3.0, genre=CONDOMINIUM, totalPrice=20800000, avgSqmPerRoom=26.67}
+After 10% discount: RealEstate{city='Budapest', price=180000.00, sqm=80, numberOfRooms=3.0, genre=CONDOMINIUM, totalPrice=18720000, avgSqmPerRoom=26.67}
+
+4. Testing Panel-specific methods:
+----------------------------------
+Test panel: Panel{city='Budapest', price=180000.00, sqm=70, numberOfRooms=3.0, genre=CONDOMINIUM, floor=4, isInsulated=false, totalPrice=16380000, avgSqmPerRoom=23.33}
+Room price (without modifiers): 4200000
+
+5. Testing hasSameAmount method:
+-------------------------------
+Panel: Panel{city='Budapest', price=180000.00, sqm=70, numberOfRooms=3.0, genre=CONDOMINIUM, floor=4, isInsulated=false, totalPrice=16380000, avgSqmPerRoom=23.33}
+Compare with: RealEstate{city='Budapest', price=180000.00, sqm=70, numberOfRooms=3.0, genre=CONDOMINIUM, totalPrice=16380000, avgSqmPerRoom=23.33}
+Same amount? true
+
+6. Testing city price modifiers:
+-------------------------------
+Budapest - Base: 5,000,000, Total: 6500000
+Debrecen - Base: 5,000,000, Total: 6000000
+Nyíregyháza - Base: 5,000,000, Total: 5750000
+Other City - Base: 5,000,000, Total: 5000000
+
+7. Testing Panel floor and insulation modifiers:
+-----------------------------------------------
+Floor 1, Insulated: false - Total: 6825000
+Floor 5, Insulated: false - Total: 6500000
+Floor 10, Insulated: false - Total: 6175000
+Floor 5, Insulated: true - Total: 6825000
+
+=== Test completed successfully! ===
